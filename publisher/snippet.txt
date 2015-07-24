@@ -1,0 +1,27 @@
+1. Place this snippet inside your web page
+2. Point url variable to the javascript game file
+3. Use and modify without restrictions (MIT license)
+
+
+<canvas id="game" style="max-width: 100%; height: auto; margin-left: auto; margin-right: auto; display: block;"></canvas>
+<script type="text/javascript">
+	(function () {
+		var url = 'path/to/game.js'; // <--- game file url
+		var request = new XMLHttpRequest();
+		request.addEventListener('progress', function(event) {
+			if (event.lengthComputable) {
+		    	var progress = event.loaded / event.total;
+		    	// display progress bar
+			}
+		}, false);
+		request.addEventListener('load', function(event) {
+			var script = document.createElement('script');
+			script.innerHTML = event.target.responseText;
+			document.body.appendChild(script);
+			var canvas = document.getElementById('game');
+			init(canvas); // calling entry point of the game
+		}, false);
+		request.open('GET', url);
+		request.send();
+	})();
+</script>

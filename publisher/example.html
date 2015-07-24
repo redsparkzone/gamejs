@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Self-contained HTML5 game example</title>
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="text-center">Example page</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod malesuada lectus, sit amet lacinia purus lacinia sagittis. Nunc lobortis dapibus ligula et pharetra. Fusce orci mauris, pellentesque id molestie quis, euismod eu velit. Fusce ligula risus, cursus et lacus id, efficitur rutrum enim. Sed quis imperdiet nisi. In non semper nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Maecenas consectetur erat dolor, at blandit magna imperdiet ac. Sed volutpat dui erat, ut mattis lorem vestibulum eu. Integer et lacinia leo, a rhoncus nulla. Aenean dolor nisl, consequat ut nisi at, condimentum feugiat sapien.</p>
+          <p class="text-center"><strong>Self-contained javascript game loaded in responsive canvas.<br>Canvas dimensions are set by game developer in the game code.</strong></p>
+
+
+          <!-- Preloader snippet BEGIN-->
+          <canvas id="game" style="max-width: 100%; height: auto; margin-left: auto; margin-right: auto; display: block;"></canvas>
+          <script type="text/javascript">
+            (function () {
+              var url = '../developer/game.js'; // <--- game file url
+              var request = new XMLHttpRequest();
+              request.addEventListener('progress', function(event) {
+                if (event.lengthComputable) {
+                    var progress = event.loaded / event.total;
+                    // display progress bar
+                }
+              }, false);
+              request.addEventListener('load', function(event) {
+                var script = document.createElement('script');
+                script.innerHTML = event.target.responseText;
+                document.body.appendChild(script);
+                var canvas = document.getElementById('game');
+                init(canvas); // calling entry point of the game
+              }, false);
+              request.open('GET', url);
+              request.send();
+            })();
+          </script>
+          <!-- Preloader snippet END-->
+
+
+          <p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod malesuada lectus, sit amet lacinia purus lacinia sagittis. Nunc lobortis dapibus ligula et pharetra. Fusce orci mauris, pellentesque id molestie quis, euismod eu velit. Fusce ligula risus, cursus et lacus id, efficitur rutrum enim. Sed quis imperdiet nisi. In non semper nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Maecenas consectetur erat dolor, at blandit magna imperdiet ac. Sed volutpat dui erat, ut mattis lorem vestibulum eu. Integer et lacinia leo, a rhoncus nulla. Aenean dolor nisl, consequat ut nisi at, condimentum feugiat sapien.</p>
+          <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin bibendum porttitor felis, vel vestibulum lorem sodales ut. Pellentesque tempor erat sit amet lectus lobortis, ac consequat nibh lacinia. Sed hendrerit finibus lorem, sit amet porttitor augue fringilla ac. Sed ac erat malesuada, auctor nulla eu, dictum diam. Aliquam vestibulum faucibus sem. Ut hendrerit tincidunt tristique. Donec sed porttitor velit, ut congue mi. Praesent aliquet ullamcorper nisl, sit amet sagittis massa semper ut. Sed tempor nec sem ac aliquet. Sed ut odio neque. Duis maximus eleifend purus sed dapibus. Phasellus ultrices arcu quis quam mattis, finibus dictum libero ullamcorper. Aliquam erat volutpat. Praesent pharetra, quam in mollis sagittis, diam felis tincidunt lacus, sodales ullamcorper dui enim eget nunc.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
