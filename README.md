@@ -21,7 +21,10 @@ http://redsparkzone.com/gamejs/publisher/example.html
 ##### What's required for it to succeed:
 - Some respectable entity (FGL or alternative) should encourage standardization among portal owners and developers
 - It should be easy for 3rd party publishers to get sponsored games in bulk for free from some centralized hub
+
+##### Incentives:
 - 3rd party publisher's incentive is straightforward - since they control the loading snippet they can place custom ads in it and make money on every play
+- Sponsors are interested in driving traffic from viral distribution to their portals through branding and in-game links (which 3rd party publishers have no control over)
 
 ##### TODO:
 - Improve the snippet: add progress bar, placeholder logo, etc.
