@@ -6,7 +6,7 @@ It allows html5 games to be distributed virally in the same way flash games were
 - A developer packages his/her game as a single self-contained javascript blob (see developer folder)
 - This single file contains all the libraries, code, asm.js modules and assets (encoded as base64 strings)
 - The blob *must* contain global init(canvas) function which is an entry point of the application
-- In order to get this game every interested publisher should place a tiny snippet on its website (see publisher folder)
+- In order to get games developed with this approach every interested publisher should place a tiny snippet on its website (see publisher folder)
 - A publisher can create its own custom snippet as long as it does what's expected: loads js file and calls init(canvas) on completion
 
 ##### Online demo:
