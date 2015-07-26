@@ -27,5 +27,6 @@ http://redsparkzone.com/gamejs/publisher/example.html
 - Sponsors are interested in driving traffic from viral distribution to their portals through branding and in-game links (which 3rd party publishers have no control over)
 
 ##### TODO:
-- Improve the snippet: add progress bar, placeholder logo, etc.
-- Create a simple web tool for packaging all the scripts and assets as a single javascript blob
+- Snippet: Improve the snippet - add progress bar, placeholder logo, etc
+- Packaging: create a simple web tool for packaging of all the scripts and assets to a single javascript blob
+- Packaging: come up with an elegant workaround to translate the existing code relying on XMLHttpRequest into local Data URI read
